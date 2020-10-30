@@ -1,0 +1,32 @@
+.new{
+    position: relative;
+}
+
+
+.new-list{
+   width: 500px;
+  height: 200px;
+  background-color:white;
+  /* Center vertically and horizontally */
+  position: absolute;
+  top: 70%;
+  left: 30%;
+  margin: 55px 10px 0px 10px;
+  padding:15px;
+
+}
+
+input[type=text]{
+    width:60%;
+
+}
+
+.new-task-list{
+    display: flex;
+    flex-direction: row;
+    margin:20px;
+    padding:10px;
+}
+button{
+    margin:10px;
+}

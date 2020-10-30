@@ -1,0 +1,9 @@
+$purple:#AF7AC5;
+$green:#76D7C4;
+$ornage:#ff6347;
+
+html,body{
+    height:100%;
+    background: linear-gradient(to right top,$purple,$green);
+    overflow: hidden;
+}

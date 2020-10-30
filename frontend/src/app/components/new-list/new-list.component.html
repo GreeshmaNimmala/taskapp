@@ -1,0 +1,8 @@
+<div class="new">
+    <div class="new-list">
+        <h4>Create a List</h4>
+        <input #listItem type="text" class="form-control">
+        <button type="button" class="btn btn-light" routerLink="/">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="newList(listItem.value)">Create</button>
+    </div>
+</div>

@@ -1,0 +1,134 @@
+
+@import '../../../main-style.scss';
+.tasks-manager{
+    display: flex;
+    width:100%;
+    height:100%;
+    max-width:800px;
+    max-height:400px;
+    background: white;
+    justify-content: center;
+    margin:5% 20%;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+}
+
+.col-5{
+    display: flex;
+    flex-direction: column;
+    width:200px;
+    height:400px;
+    border-radius:4px;
+    padding:22px;
+
+    h5{
+        font-weight: bold;
+        color:$green;
+    }
+}
+.col-7{
+    display: flex;
+    flex-grow: 1;
+    position: relative;
+    flex-direction: column;
+    height:400px;
+    background-color: whitesmoke;
+    h5{
+        font-weight: bold;
+        color:$green;
+    }
+    .top-bar{
+        display: flex;
+
+        .title{
+            flex-grow: 1;
+            margin-top:5px;
+
+        }
+
+        .dropdown{
+            margin-top:5px;
+        }
+    }
+}
+.list-menu{
+    display: flex;
+    flex-direction: column;
+    margin-top:15px;
+    flex-grow:1;
+
+.list-menu-item{
+    display: flex;
+    align-items: center;
+    width:100%;
+    padding:10px 5px;
+
+    color:#686868;
+    &:hover{
+        background:lightcyan
+    }
+    &.active{
+        background-color:$green;
+        color: black
+    }
+
+}
+}
+.tasks-list {
+
+    display: flex;
+    background:white;
+    margin-top:10px;
+    padding:15px 20px;
+    border-radius: 5px;
+    align-items: center;
+    transition: box-shadow 0.2s ease,transform 0.2s ease;
+    &:not(.complete){
+        cursor: pointer;
+    &:active{
+        transform: scale(1.15,1.15);
+    }
+
+    &:hover{
+        box-shadow:0 0 0 5px #eeeeee;
+        .task-buttons{
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    }
+    &.completed{
+        text-decoration: line-through;
+        opacity: 0.8;
+    }
+    .task-text{
+        flex-grow: 1;
+    }
+    button{
+
+        margin-right:15px;
+    }
+    .task-buttons{
+        transition: opacity 0.2s,transform 0.2s;
+        display: flex;
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+.btn-info{
+    position: absolute;
+    bottom: 35px;
+    right:15px;
+    width:40px;
+    height: 35px;
+    border-radius:50%;
+}
+
+.message{
+
+    text-align: center;
+    color: gray;
+
+}

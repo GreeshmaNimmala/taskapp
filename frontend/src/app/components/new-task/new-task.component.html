@@ -1,0 +1,8 @@
+<div class="new">
+    <div class="new-task">
+        <h4>Create a New Task</h4>
+        <input #taskInput type="text" class="form-control">
+        <button type="button" class="btn btn-light" routerLink="/">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="newTask(taskInput.value)">Create</button>
+    </div>
+</div>

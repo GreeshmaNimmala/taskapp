@@ -1,0 +1,9 @@
+<div class="new">
+    <div class="new-list">
+        <h4>Edit List</h4>
+
+        <input #listItem type="text" class="form-control">
+        <button type="button" class="btn btn-light" routerLink="/">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="updateList(listItem.value)">Update</button>
+    </div>
+</div>

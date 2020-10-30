@@ -1,0 +1,62 @@
+<div class="tasks-manager">
+    <div class="container">
+        <div class="row">
+            <div class="col-5">
+                <h5>Lists</h5>
+                <div class="list-menu">
+
+                    <a class="list-menu-item" *ngFor="let item of list;" [routerLink]="['/lists',item._id]"
+                    routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
+                        <p>{{item.title}}</p>
+                    </a>
+                </div>
+            <button class="btn btn-primary" routerLink="/new-list" >New List</button>
+
+            </div>
+            <div class="col-7">
+
+                <div *ngIf="tasks">
+                    <div class="top-bar">
+                        <h5 class="title">Tasks</h5>
+
+                        <div class="d-inline-block" ngbDropdown #myDrop="ngbDropdown">
+                            <button class="btn btn-outline-primary mr-2" id="dropdownManual" ngbDropdownAnchor (focus)="myDrop.open()">
+                                <i class="fas fa-cog"></i>
+                            </button>
+                            <div ngbDropdownMenu aria-labelledby="dropdownManual">
+                              <button ngbDropdownItem [routerLink]="['/edit-list',selectedListId]">Edit</button>
+                              <button ngbDropdownItem (click)="deleteList()">Delete</button>
+                            </div>
+                          </div>
+
+
+                    </div>
+                    <div class="tasks-list" *ngFor="let task of tasks" (click)="taskComplete(task)" [ngClass]="{'completed':task.completed}">
+                        <div class="task-text">
+                            <p>{{task.title}}</p>
+                        </div>
+                        <div class="task-buttons">
+                        <button class="btn btn-secondary" [routerLink]="['/lists', selectedListId, 'edit-task', task._id]">Edit</button>
+                        <button class="btn btn-danger" (click)="onTaskDelete(task._id)">Delete</button>
+                        </div>
+                    </div>
+                    <h4 class="message" *ngIf="tasks.length === 0">Please create a task for the List</h4>
+                <button type="button" class="btn btn-info" routerLink="./new-task">
+                        <i class="fas fa-plus"></i>
+                </button>
+
+                </div>
+
+                <div *ngIf="!tasks">
+                    <h4 class="message">Please select a list from the sidebar</h4>
+                </div>
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
